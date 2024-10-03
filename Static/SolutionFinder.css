@@ -1,0 +1,14 @@
+.Button
+{
+	cursor: pointer;
+}
+
+.Button:hover
+{
+	background: #222;
+}
+
+.Button.Selected
+{
+	background: #444;
+}

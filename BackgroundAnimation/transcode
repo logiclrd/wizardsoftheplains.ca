@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -i vecteezy_fire-and-brimstone-of-hell-looping-full-hd-fiery-inferno_21430789.mov -i BackgroundFade.png -filter_complex '[1] scale=960:540 [b], [0] vflip,scale=960:-1,colorchannelmixer=0:0:0:0:0.5:0:0:0:0.8:0:0:0 [f], [f][b] overlay [c], [c] setpts=PTS*4' -r 7.5 -c:v libx264 -crf 24 Background.mp4

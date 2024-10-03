@@ -1,0 +1,1 @@
+This web site is hosted on a "dumb" provider. They do support PHP but nothing else. The reason this is an ASP.NET Core project is so that I can do development easily on machines that don't have any web server installed. The web site has to be able to run entirely from static hosting of the `Static` folder.

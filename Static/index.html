@@ -1,0 +1,182 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-CA">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="" />
+    <meta charset="utf-8" />
+    <title>Wizards of the Plains</title>
+    <link rel="canonical" href="https://www.wizardsoftheplains.ca"/>
+    <meta property="og:site_name" content="Wizards of the Plains"/>
+    <meta property="og:title" content="Wizards of the Plains"/>
+    <meta property="og:url" content="https://www.wizardsoftheplains.ca"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="LogoElementsColoured.png"/>
+    <meta property="og:image:width" content="1500"/>
+    <meta property="og:image:height" content="510"/>
+    <meta itemprop="name" content="Wizards of the Plains"/>
+    <meta itemprop="url" content="https://www.wizardsoftheplains.ca"/>
+    <meta itemprop="thumbnailUrl" content="LogoElementsColoured.png"/>
+    <link rel="image_src" href="LogoElements.png" />
+    <meta itemprop="image" content="LogoElementsColoured.png"/>
+    <meta name="twitter:title" content="Wizards of the Plains"/>
+    <meta name="twitter:image" content="LogoElements.png"/>
+    <meta name="twitter:url" content="https://www.wizardsoftheplains.ca"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="Style.css" />
+
+    <link rel="stylesheet" href="Fonts/Fonts.css" />
+
+    <script type="text/javascript" src="SolutionFinder.js"></script>
+    <link rel="stylesheet" href="SolutionFinder.css" />
+
+    <script type="text/javascript">
+      var pnlSolutionFinder;
+      var pnlSolution;
+      var lblSolution;
+      var imgZap;
+
+      function InitializeComponents()
+      {
+        pnlSolutionFinder = document.getElementById("pnlSolutionFinder");
+        pnlSolution = document.getElementById("pnlSolution");
+        lblSolution = document.getElementById("lblSolution");
+        imgZap = document.getElementById("imgZap");
+      }
+
+      function ShowSolution(solution)
+      {
+        pnlSolution.classList.remove("Hidden");
+        lblSolution.innerText = solution;
+
+        pnlSolution.scrollIntoView({ behavior: "smooth" });
+
+        pnlSolution.animate(
+          [
+            { background: "#333" },
+            { background: "unset" }
+          ],
+          {
+            duration: 350,
+            iterations: 1
+          });
+      }
+
+      const ZapDuration = 8000;
+      const ZapMinimumDelay = 10000;
+      const ZapMaximumDelay = 50000;
+
+      function StartZap()
+      {
+        imgZap.currentTime = 0;
+        imgZap.play();
+
+        setTimeout(() => imgZap.pause(), ZapDuration);
+
+        PeriodicZap();
+      }
+
+      function PeriodicZap()
+      {
+        setTimeout(StartZap, ZapMinimumDelay + Math.random() * (ZapMaximumDelay - ZapMinimumDelay));
+      }
+
+      function PageLoad()
+      {
+        InitializeComponents();
+        InitializeSolutionFinder(pnlSolutionFinder, ShowSolution);
+
+        PeriodicZap();
+      }
+
+      window.addEventListener("load", PageLoad);
+    </script>
+  </head>
+
+  <body tabindex="-1">
+    <video class="Background" autoplay loop muted poster="Background.jpg">
+      <source src="Background.mp4" type="video/mp4" />
+    </video>
+    <div class="Logo">
+      <div class="LogoLayout">
+        <div class="LogoSize">
+          <img src="Wizard.png" class="LogoSize" style="position: absolute" />
+          <video class="LogoSize" id="imgZap" loop muted playsinline>
+            <!--<source 
+              src="https://rotato.netlify.app/alpha-demo/movie-hevc.mov" 
+              type='video/mp4; codecs="hvc1"'>-->
+            <source src="Zap.webm" type="video/webm" >
+          </video>
+        </div>
+        <div style="flex-grow: 1; text-align: center;">
+          <img src="WizardsOfThePlains.svg" class="LogoText" />
+        </div>
+      </div>
+    </div>
+    <div class="Section CenterBlock">
+      <p class="CenterText LargerText">
+        Wizards of the Plains provides premier 3D scanning and 3D printing services in Manitoba. Whatever your 3D needs,
+        we aim to provide quality service and results.
+      </p>
+      <hr />
+      <div id="pnlSolutionFinder">
+        <h2 class="CenterText">
+          Solution Finder
+        </h2>
+        <table class="CenterBlock">
+          <tr>
+            <th><p>I have...</p></th>
+            <th><p>I want...</p></th>
+          </tr>
+          <tr>
+            <td>
+              <div id="pnlHaves">
+                <p>(loading...)</p>
+              </div>
+            </td>
+            <td>
+              <div id="pnlWants">
+                <p>Start by selecting an item from the first column</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <div id="pnlSolution" class="Hidden">
+          <h2 class="CenterText SubsumeTopMargin">
+            Solution
+          </h2>
+          <p id="lblSolution">
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="Section CenterBlock">
+      <table class="CenterBlock">
+        <tr>
+          <td style="width: 20vw">
+            <p class="CenterText">
+              <a name="hours">
+                <b>Hours</b>
+              </a>
+            </p>
+            <p class="CenterText">
+              <i>By Appointment</i>
+            </p>
+          </td>
+          <td style="width: 20vw">
+            <p class="CenterText">
+              <b>Contact</b>
+            </p>
+            <p class="CenterText">
+              wizards@deltaq.org
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

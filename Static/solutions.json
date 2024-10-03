@@ -1,0 +1,47 @@
+{
+  "a trinket":
+	{
+		"a 3D model file": "We can do that!",
+		"a 3D printed copy of it": "We can do that!"
+	},
+  "an idea for something":
+	{
+		"help designing it": "We can do that!",
+		"help making it": "We can do that!"
+	},
+	"a design idea for a mug or water bottle":
+	{
+		"custom printed mugs or water bottles": "We can do that!"
+	},
+  "a 3D model file":
+	{
+		"a 3D print of it": "We can do that!",
+		"help editing it": "We can do that!"
+	},
+  "a furry family member":
+	{
+		"a 3D model of them": "We can do that!",
+		"a 3D print of them": "We can do that!"
+	},
+  "a look or costume":
+	{
+		"a 3D model that captures it": "We can do that!",
+		"a 3D print that captures it": "We can do that!"
+	},
+  "an important life event":
+	{
+		"a 3D capture": "We can do that!",
+		"a 3D print": "We can do that!"
+	},
+  "a building":
+	{
+		"a 3D capture": "We can do that!",
+		"a 3D print": "We can do that!"
+	},
+  "land/property":
+	{
+		"a 3D model": "We can do that!",
+		"a 3D print": "We can do that!",
+		"agricultural mapping": "We can do that!"
+	}
+}

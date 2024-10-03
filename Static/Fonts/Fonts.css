@@ -1,0 +1,71 @@
+@font-face
+{
+    font-family: 'AcuminProBoldItalic';
+    src: url('acumin-bditpro-webfont.woff2') format('woff2'),
+         url('acumin-bditpro-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'AcuminProBold';
+    src: url('acumin-bdpro-webfont.woff2') format('woff2'),
+         url('acumin-bdpro-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'AcuminProItalic';
+    src: url('acumin-itpro-webfont.woff2') format('woff2'),
+         url('acumin-itpro-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'AcuminPro';
+    src: url('acumin-rpro-webfont.woff2') format('woff2'),
+         url('acumin-rpro-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'SpaceMonoBold';
+    src: url('spacemono-bold-webfont.woff2') format('woff2'),
+         url('spacemono-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'SpaceMonoBoldItalic';
+    src: url('spacemono-bolditalic-webfont.woff2') format('woff2'),
+         url('spacemono-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'SpaceMono';
+    src: url('spacemono-regular-webfont.woff2') format('woff2'),
+         url('spacemono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'SpaceMonoItalic';
+    src: url('spacemono-italic-webfont.woff2') format('woff2'),
+         url('spacemono-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

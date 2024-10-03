@@ -1,0 +1,251 @@
+body
+{
+	margin: 0;
+	background: black;
+}
+
+.Background
+{
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	object-fit: fill;
+}
+
+.Logo
+{
+	margin: 4vw;
+}
+
+.LogoLayout
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.LogoSize
+{
+	width: 20vw;
+	min-width: 30vh;
+}
+
+.LogoText
+{
+	max-width: calc(90vw - max(30vh, 20vw));
+	max-height: max(30vh, 20vw);
+	flex-grow: 1;
+}
+
+@media (max-width: 5in)
+{
+	.LogoLayout
+	{
+		flex-direction: column;
+	}
+
+	.LogoSize
+	{
+		width: 80vw;
+	}
+
+	.LogoText
+	{
+		width: 80vw;
+		max-width: unset;
+		max-height: unset;
+	}
+}
+
+.Section
+{
+	margin: 0;
+	color: #eee;
+	width: 70%;
+}
+
+@media screen and (max-width: 5in) and (min-width: 3in)
+{
+	.Section
+	{
+		width: calc(100vw - 0.1in);
+	}
+}
+
+@media screen and (max-width: 3in)
+{
+	.Section
+	{
+		width: 2.9in;
+	}
+}
+
+.LargerText
+{
+	font-size: 140%;
+}
+
+.CenterBlock
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.CenterText
+{
+	text-align: center;
+}
+
+.NoWrap
+{
+	white-space: pre-wrap;
+}
+
+th, th p
+{
+	text-align: left;
+	font-family: SpaceMonoBold;
+}
+
+.Hidden
+{
+	display: none;
+}
+
+h2
+{
+	font-family: AcuminPro;
+	font-size: max(2.4vw, 5vh);
+	text-transform: uppercase;
+}
+
+p
+{
+	font-family: SpaceMono;
+	font-size: max(0.85vw, 12pt);
+	margin: 2em;
+	border: 1px solid transparent;
+	line-height: 1.5em;
+}
+
+@media screen and (max-width: 5in)
+{
+	p
+	{
+		margin: 2em 0;
+	}
+}
+
+p.Medium
+{
+	padding-left: 30vw;
+	padding-right: 30vw;
+}
+
+p.Narrow
+{
+	padding-left: 40vw;
+	padding-right: 40vw;
+}
+
+p:has(.RoundedButton)
+{
+	padding: 2em;
+	margin: 0em;
+}
+
+a.RoundedButton
+{
+	text-align: center;
+	font-family: SpaceMono;
+	font-size: 0.8vw;
+	border-radius: 12vw;
+	background-color: hsla(204.39, 79.49%, 38.24%, 1);
+	padding: 1.1vw 2vw;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	margin: 2em;
+	border: 1px solid transparent;
+}
+
+a
+{
+	color: rgb(20, 112, 175);
+}
+
+img.LeftImage, img.RightImage
+{
+	width: 30vw;
+	padding: 3em 0;
+}
+
+img.LeftImage
+{
+	float: left;
+}
+
+img.RightImage
+{
+	float: right;
+}
+
+.Accordion
+{
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+
+.AccordionButton
+{
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: AcuminPro;
+	text-transform: uppercase;
+	font-size: 1vw;
+	font-weight: bold;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+
+.AccordionSeparator
+{
+	height: 1px;
+	background: black;
+}
+
+.AccordionPanel
+{
+	display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.AccordionPanel.Visible
+{
+	display: block;
+}
+
+.SmallerText p
+{
+	font-size: 0.6vw;
+}
+
+table td
+{
+	vertical-align: top;
+}
+
+.SubsumeTopMargin
+{
+	margin-top: 0;
+	padding-top: 1em;
+}
