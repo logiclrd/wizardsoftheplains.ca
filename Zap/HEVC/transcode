@@ -1,0 +1,7 @@
+#!/bin/sh
+
+../transcode rawvideo yuva420p Zap.yuva420p
+x265 --input-res 606x692 --fps 30000/1001 --alpha --crf 20 Zap.yuva420p Zap.hevc
+mkvmerge Zap.hevc -o Zap.mkv
+ffmpeg -itsscale 0.3336666666 -i Zap.mkv -c copy Zap.mp4 -y
+

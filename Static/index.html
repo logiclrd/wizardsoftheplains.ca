@@ -32,6 +32,8 @@
     <script type="text/javascript" src="SolutionFinder.js"></script>
     <link rel="stylesheet" href="SolutionFinder.css" />
 
+    <script type="text/javascript" src="detect_webm_alpha.js"></script>
+
     <script type="text/javascript">
       var pnlSolutionFinder;
       var pnlSolution;
@@ -83,12 +85,22 @@
         setTimeout(StartZap, ZapMinimumDelay + Math.random() * (ZapMaximumDelay - ZapMinimumDelay));
       }
 
+      function ShowZap()
+      {
+        imgZap.classList.remove("Hidden");
+      }
+
       function PageLoad()
       {
         InitializeComponents();
         InitializeSolutionFinder(pnlSolutionFinder, ShowSolution);
 
-        PeriodicZap();
+        DetectWebMAlpha().then(
+          () =>
+          {
+            ShowZap();
+            PeriodicZap();
+          });
       }
 
       window.addEventListener("load", PageLoad);
@@ -103,11 +115,8 @@
       <div class="LogoLayout">
         <div class="LogoSize">
           <img src="Wizard.png" class="LogoSize" style="position: absolute" />
-          <video class="LogoSize" id="imgZap" loop muted playsinline>
-            <!--<source 
-              src="https://rotato.netlify.app/alpha-demo/movie-hevc.mov" 
-              type='video/mp4; codecs="hvc1"'>-->
-            <source src="Zap.webm" type="video/webm" >
+          <video class="LogoSize Hidden" id="imgZap" loop muted playsinline>
+            <source src="Zap.webm" type="video/webm">
           </video>
         </div>
         <div style="flex-grow: 1; text-align: center;">

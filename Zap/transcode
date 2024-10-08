@@ -1,3 +1,19 @@
 #!/bin/sh
 
-ffmpeg -i zap.mp4 -i mask.png -i pulse.mkv -t 8 -filter_complex '[0] crop=1580:692:200:200 [video]; [2] alphaextract,format=gbrp [pulse]; [1] alphaextract,format=gbrp [mask]; [pulse][mask] multiply=offset=0 [pulsemask]; [video][pulsemask] alphamerge,crop=606:692:0:0' -c:v libvpx-vp9 -an masked.webm
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+if [ $# -eq 0 ]; then
+  FORMAT=webm
+  PIXFMT=yuva420p
+  OUTPUT=masked.webm
+  CODEC_ARGUMENT="-c:v libvpx-vp9"
++
+
+else
+  FORMAT=$1
+  PIXFMT=$2
+  OUTPUT=$3
+  CODEC_ARGUMENT=""
+fi
+
+ffmpeg -i $SCRIPTPATH/zap.mp4 -i $SCRIPTPATH/mask.png -i $SCRIPTPATH/pulse.mkv -t 8 -filter_complex '[0] crop=1580:692:200:200 [video]; [2] alphaextract,format=gbrp [pulse]; [1] alphaextract,format=gbrp [mask]; [pulse][mask] multiply=offset=0 [pulsemask]; [video][pulsemask] alphamerge,crop=606:692:0:0,format=yuva444p' -f $FORMAT $CODEC_ARGUMENT -an -pix_fmt $PIXFMT $OUTPUT -y
