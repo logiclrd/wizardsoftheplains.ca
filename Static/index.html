@@ -48,10 +48,74 @@
         imgZap = document.getElementById("imgZap");
       }
 
-      function ShowSolution(solution)
+      function Capitalize(word)
+      {
+        var firstLetter = word[0];
+        var remainder = word.substring(1);
+
+        return firstLetter.toUpperCase() + remainder;
+      }
+
+      function RenderSolution(solution)
       {
         pnlSolution.classList.remove("Hidden");
-        lblSolution.innerText = solution;
+
+        assignedText = false;
+
+        try
+        {
+          if (typeof(solution) == "string")
+          {
+            lblSolution.innerText = solution;
+            assignedText = true;
+          }
+          else if (Array.isArray(solution))
+          {
+            lblSolution.innerText = "";
+
+            for (let i=0; i < solution.length; i++)
+            {
+              let item = solution[i];
+
+              if ("text" in item)
+              {
+                let txtSpan = document.createElement("span");
+
+                let text = item.text;
+
+                if (Array.isArray(text))
+                  text = text.join(" ");
+
+                txtSpan.innerText = text;
+
+                lblSolution.appendChild(txtSpan);
+              }
+
+              if ("image" in item)
+              {
+                let imgImage = document.createElement("img");
+
+                imgImage.classList.add("SolutionImage");
+                imgImage.src = "SolutionImages/" + item.image;
+
+                if ("float" in item)
+                  imgImage.classList.add(Capitalize(item.float) + "Image");
+
+                lblSolution.appendChild(imgImage);
+              }
+            }
+          }
+        }
+        catch
+        {
+          if (!assignedText)
+            lblSolution.innerText = "We can do that!";
+        }
+      }
+
+      function ShowSolution(solution)
+      {
+        RenderSolution(solution);
 
         pnlSolution.scrollIntoView({ behavior: "smooth" });
 
@@ -159,7 +223,8 @@
           </h2>
           <p id="lblSolution">
           </p>
-          <hr />
+          <br clear="both" />
+          <hr style="margin-top: 2em" />
         </div>
       </div>
     </div>

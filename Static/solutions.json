@@ -20,13 +20,33 @@
 	},
   "a furry family member":
 	{
-		"a 3D model of them": "We can do that!",
-		"a 3D print of them": "We can do that!"
+		"a 3D model of them":
+		[
+			{ "image": "DogInScanner.jpg", "float": "right" },
+			{ "text": [ "If your furry friend can stand, sit or lie on the platform for a second, we can capture a scan of them. The resulting file has very high detail and can be displayed",
+			  "on Windows, MacOS and Linux, embedded in a web site, loaded into a 3D editor, etc." ] }
+		],
+		"a 3D print of them":
+		[
+			{ "image": "PumpkinPrint.jpg", "float": "left" },
+			{ "text": [ "Full-colour sandstone prints are the perfect way to have a memento of an important dog or cat. Capture a dog that's important to you, or give the gift",
+			  "to a friend." ] }
+		]
 	},
   "a look or costume":
 	{
-		"a 3D model that captures it": "We can do that!",
-		"a 3D print that captures it": "We can do that!"
+		"a 3D model that captures it":
+		[
+			{ "image": "WomanInScanner.jpg", "float": "left" },
+			{ "text": [ "Stand in our full-body booth scanner and get scanned in less than a second. The resulting file has very high detail and can be displayed on Windows, MacOS and",
+				"Linux, embedded in a web site, loaded into a 3D editor, etc." ] }
+		],
+		"a 3D print that captures it":
+		[
+			{ "image": "HandHoldingPrint.png", "float": "left" },
+			{ "text": [ "We can scan you, which is just like getting your photo taken, but in 3D. The resulting scan can be printed in a variety of ways. Our premium full-colour",
+				"process gives highly-detailed lifelike miniatures that capture every detail." ] }
+		]
 	},
   "an important life event":
 	{

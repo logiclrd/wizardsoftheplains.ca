@@ -9,13 +9,23 @@ var SolutionFinder =
 
 		var isInitialized;
 
+		function LogActivity(text)
+		{
+			fetch("SolutionFinderLog?" + text, (r) => { });
+		}
+
 		function CreateButton(label, clickHandler)
 		{
 			var cmdButton = document.createElement("p");
 
 			cmdButton.className = "Button";
 			cmdButton.innerText = label;
-			cmdButton.onclick = () => clickHandler(cmdButton);
+			cmdButton.onclick =
+				() =>
+				{
+					LogActivity("Click=" + label);
+					clickHandler(cmdButton);
+				};
 
 			return cmdButton;
 		}

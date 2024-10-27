@@ -130,11 +130,23 @@ p
 	line-height: 1.5em;
 }
 
+.SolutionImage
+{
+	max-width: 25%;
+	max-height: 20em;
+	object-fit: contain;
+}
+
 @media screen and (max-width: 5in)
 {
 	p
 	{
 		margin: 2em 0;
+	}
+
+	.SolutionImage
+	{
+		width: 100%;
 	}
 }
 
@@ -176,20 +188,16 @@ a
 	color: rgb(20, 112, 175);
 }
 
-img.LeftImage, img.RightImage
-{
-	width: 30vw;
-	padding: 3em 0;
-}
-
 img.LeftImage
 {
 	float: left;
+	margin-right: 1em;
 }
 
 img.RightImage
 {
 	float: right;
+	margin-left: 1em;
 }
 
 .Accordion
