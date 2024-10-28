@@ -1,4 +1,4 @@
-#!/usr/bin/php
+#!/usr/bin/php8.2
 
 <?php
 $logpath = realpath("logs");
@@ -7,30 +7,36 @@ $logfiles = glob($logpath . "/access.log.*");
 
 $newlines = "\r\n";
 
+$clickcount_total = array();
+$clickcount_recent = array();
+
+$recent_interval_days = isset($_GET['d']) ? $_GET["d"] : null;
+
+if (is_numeric($recent_interval_days))
+	$recent_interval_days = intval($recent_interval_days);
+else
+	$recent_interval_days = 7;
+
+printf("Recent requests are within the past " . ngettext("%d day", "%d days", $recent_interval_days) . "<br>\n<br>\n", $recent_interval_days);
+
+$recent_interval = date_interval_create_from_date_string("$recent_interval_days days");
+
+$now = new DateTime();
+
 foreach ($logfiles as $file)
 {
 	$pathinfo = pathinfo($file);
 
 	if ($pathinfo['extension'] == 'gz')
 	{
-		$process = proc_open("/sur/bn/gzip -d $file", array(0 => array("pipe", "r"), 1 => array("pipe", "w")), $pipes);
+		$process = proc_open("/usr/bin/zcat $file", array(0 => array("pipe", "r"), 1 => array("pipe", "w")), $pipes);
 		$content = stream_get_contents($pipes[1]);
 		proc_close($process);
 	}
 	else
-	{
 		$content = file_get_contents($file);
-	}
 
 	$line = strtok($content, $newlines);
-
-	$clickcount_total = array();
-	$clickcount_recent = array();
-
-	$recent_interval_days = 7;
-	$recent_interval = date_interval_create_from_date_string("$recent_interval_days days");
-
-	$now = getdate();
 
 	while ($line !== false)
 	{
@@ -64,30 +70,30 @@ foreach ($logfiles as $file)
 					$clickcount_recent[$clickid]++;
 			}
 
-			print("$timestamp: $clickid<br>");
+			print("$timestamp: $clickid<br>\n");
 		}
 
 		$line = strtok($newlines);
 	}
 }
 
-print("<br>");
-print("Recent:<br><ul>");
+print("<br>\n");
+print("Recent:<br>\n<ul>\n");
 
 foreach (array_keys($clickcount_recent) as $key)
 {
-	print("<li>$key: " . $clickcount_recent[$key] . "</li>");
+	print("<li>$key: " . $clickcount_recent[$key] . "</li>\n");
 }
 
-print("</ul>");
-print("<br>");
-print("Ever:<br><ul>");
+print("</ul>\n");
+print("<br>\n");
+print("Ever:<br>\n<ul>\n");
 
 foreach (array_keys($clickcount_total) as $key)
 {
-	print("<li>$key: " . $clickcount_total[$key] . "</li>");
+	print("<li>$key: " . $clickcount_total[$key] . "</li>\n");
 }
 
-print("</ul>");
+print("</ul>\n");
 ?>
 
