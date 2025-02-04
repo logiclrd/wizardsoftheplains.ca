@@ -1,39 +1,43 @@
 {
-  "a trinket":
+	"a trinket":
 	{
 		"a 3D model file": "We can do that!",
 		"a 3D printed copy of it": "We can do that!"
 	},
-  "an idea for something":
+	"an idea for something":
 	{
 		"help designing it": "We can do that!",
-		"help making it": "We can do that!"
+		"help making it":
+		[
+			{ "image": "MulticolorFDMPrint.jpg", "float": "right" },
+			{ "text" : "Need something with a logo or a specific function? We can help put the pieces together in vivid colour. Shown here is a 'jibbitz' -- Croc ornament -- with a local sports team logo." }
+		]
 	},
 	"a design idea for a mug or water bottle":
 	{
 		"custom printed mugs or water bottles": "We can do that!"
 	},
-  "a 3D model file":
+	"a 3D model file":
 	{
 		"a 3D print of it": "We can do that!",
 		"help editing it": "We can do that!"
 	},
-  "a furry family member":
+	"a furry family member":
 	{
 		"a 3D model of them":
 		[
 			{ "image": "DogInScanner.jpg", "float": "right" },
 			{ "text": [ "If your furry friend can stand, sit or lie on the platform for a second, we can capture a scan of them. The resulting file has very high detail and can be displayed",
-			  "on Windows, MacOS and Linux, embedded in a web site, loaded into a 3D editor, etc." ] }
+				"on Windows, MacOS and Linux, embedded in a web site, loaded into a 3D editor, etc." ] }
 		],
 		"a 3D print of them":
 		[
 			{ "image": "PumpkinPrint.jpg", "float": "left" },
 			{ "text": [ "Full-colour sandstone prints are the perfect way to have a memento of an important dog or cat. Capture a dog that's important to you, or give the gift",
-			  "to a friend." ] }
+				"to a friend." ] }
 		]
 	},
-  "a look or costume":
+	"a look or costume":
 	{
 		"a 3D model that captures it":
 		[
@@ -48,17 +52,22 @@
 				"process gives highly-detailed lifelike miniatures that capture every detail." ] }
 		]
 	},
-  "an important life event":
+	"an important life event":
+	{
+		"a 3D capture": "We can do that!",
+		"a 3D print":
+		[
+			{ "image": "FullColourSandstonePrints.jpg", "float": "left" },
+			{ "text": [ "A full-colour figurine makes an excellent mantelpiece ornament that takes you right back to a meaningful time or event at a glance. Many of these things only happen once. Capture",
+				"it in a unique way!" ] }
+		]
+	},
+	"a building":
 	{
 		"a 3D capture": "We can do that!",
 		"a 3D print": "We can do that!"
 	},
-  "a building":
-	{
-		"a 3D capture": "We can do that!",
-		"a 3D print": "We can do that!"
-	},
-  "land/property":
+	"land/property":
 	{
 		"a 3D model": "We can do that!",
 		"a 3D print": "We can do that!",
